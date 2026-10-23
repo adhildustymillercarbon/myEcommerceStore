@@ -41,7 +41,7 @@ Resources:
       CodeUri: src/CreateOrder
       Handler: index.handler
       Runtime: nodejs22.x
-      MemorySize: 128
+      MemorySize: 512
       Timeout: 30
       Tracing: Active
       Environment:
@@ -103,7 +103,7 @@ Resources:
       CodeUri: src/UpdateInventory
       Handler: index.handler
       Runtime: nodejs22.x
-      MemorySize: 128
+      MemorySize: 512
       Timeout: 30
       Tracing: Active
       Events:
@@ -124,6 +124,7 @@ Resources:
             Path: /orders
             Method: PUT
             RestApiId: !Ref OrderApi
+      Environment: {}
   UpdateInventoryLogGroup:
     Type: AWS::Logs::LogGroup
     DeletionPolicy: Retain
@@ -139,7 +140,7 @@ Resources:
       CodeUri: src/ProcessPayment
       Handler: index.handler
       Runtime: nodejs22.x
-      MemorySize: 128
+      MemorySize: 512
       Timeout: 30
       Tracing: Active
       Environment:
